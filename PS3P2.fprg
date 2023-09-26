@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="perez"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-25 10:14:09 PM"/>
+        <attribute name="created" value="cGVyZXo7TFBSRVo7MjAyMy0wOS0xNDswNToxNTozNyBQTTsyMjMz"/>
+        <attribute name="edited" value="cGVyZXo7TFBSRVo7MjAyMy0wOS0yNTsxMDoxNDowOSBQTTszOzIzMzk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="SharePrice" type="Real" array="False" size=""/>
+            <declare name="StockPrice" type="Real" array="False" size=""/>
+            <declare name="StockQuantity" type="Real" array="False" size=""/>
+            <declare name="StockValue" type="Real" array="False" size=""/>
+            <input variable="SharePrice"/>
+            <input variable="StockPrice"/>
+            <input variable="StockQuantity"/>
+            <assign variable="StockValue" expression="(StockPrice-SharePrice)*StockQuantity"/>
+            <output expression="&quot;Stock value has changed by:  $  &quot;&amp;StockValue" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
