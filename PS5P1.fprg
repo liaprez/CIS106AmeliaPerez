@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="perez"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-28 04:08:14 PM"/>
+        <attribute name="created" value="cGVyZXo7TFBSRVo7MjAyMy0wOS0yODswMzo0MzowMCBQTTsyMjI3"/>
+        <attribute name="edited" value="cGVyZXo7TFBSRVo7MjAyMy0wOS0yODswNDowODoxNCBQTTsxOzIzNDI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ItemQuantity" type="Integer" array="False" size=""/>
+            <declare name="UnitPrice" type="Real" array="False" size=""/>
+            <declare name="ExtendedPrice" type="Real" array="False" size=""/>
+            <declare name="Tax" type="Real" array="False" size=""/>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <output expression="&quot;How many items?&quot;" newline="True"/>
+            <input variable="ItemQuantity"/>
+            <if expression="ItemQuantity &gt;= 1000">
+                <then>
+                    <assign variable="UnitPrice" expression="3.00"/>
+                </then>
+                <else>
+                    <assign variable="UnitPrice" expression="5.00"/>
+                </else>
+            </if>
+            <assign variable="ExtendedPrice" expression="ItemQuantity*UnitPrice"/>
+            <assign variable="Tax" expression="ExtendedPrice*.07"/>
+            <assign variable="Total" expression="ExtendedPrice+Tax"/>
+            <output expression="&quot;Number of items: &quot;&amp;ItemQuantity&amp;ToChar(13)&amp;&#13;&#10;&quot;Unit price: $&quot;&amp;UnitPrice&amp;ToChar(13)&amp;&#13;&#10;&quot;Extended price: $&quot;&amp;ExtendedPrice&amp;ToChar(13)&amp;&#13;&#10;&quot;Tax: $&quot;&amp;Tax&amp;ToChar(13)&amp;&#13;&#10;&quot;Total: $&quot;&amp;Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
