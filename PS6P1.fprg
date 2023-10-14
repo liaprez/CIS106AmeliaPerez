@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="perez"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-13 05:44:04 PM"/>
+        <attribute name="created" value="cGVyZXo7TFBSRVo7MjAyMy0xMC0xMzswMTo0NDowMiBBTTsyMTk5"/>
+        <attribute name="edited" value="cGVyZXo7TFBSRVo7MjAyMy0xMC0xMzswNTo0NDowNCBQTTszOzIzMzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="widgetqty" type="Integer" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="extprice" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the quantity of widgets: &quot;" newline="True"/>
+            <input variable="widgetqty"/>
+            <if expression="widgetqty&gt; 10000">
+                <then>
+                    <assign variable="price" expression="10.00"/>
+                </then>
+                <else>
+                    <if expression="widgetqty&gt;= 5000 and widgetqty &lt;= 10000">
+                        <then>
+                            <assign variable="price" expression="20.00"/>
+                        </then>
+                        <else>
+                            <assign variable="price" expression="30.00"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="extprice" expression="widgetqty* price"/>
+            <assign variable="tax" expression="extprice * (.07)"/>
+            <assign variable="total" expression="extprice + tax"/>
+            <output expression="&quot;Extended price: $&quot; &amp; extprice &amp; ToChar(13) &amp;&#13;&#10;&quot;Tax: $&quot; &amp; tax &amp; ToChar(13) &amp;&#13;&#10;&quot;Total: $&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
