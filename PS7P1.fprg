@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="perez"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-28 04:55:28 PM"/>
+        <attribute name="created" value="cGVyZXo7TFBSRVo7MjAyMy0xMS0yODswMzo0MjozMiBBTTsyMjA5"/>
+        <attribute name="edited" value="cGVyZXo7TFBSRVo7MjAyMy0xMS0yODswNDo1NToyOCBQTTsyOzIzNDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="startv" type="Integer" array="False" size=""/>
+            <assign variable="startv" expression="1"/>
+            <declare name="stopv" type="Integer" array="False" size=""/>
+            <assign variable="stopv" expression="25"/>
+            <declare name="incrv" type="Integer" array="False" size=""/>
+            <assign variable="incrv" expression="2"/>
+            <while expression="startv &lt;= stopv">
+                <output expression="&quot;loop increment: &quot; &amp; startv" newline="True"/>
+                <assign variable="startv" expression="startv + incrv"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="perez"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-29 04:52:47 AM"/>
+        <attribute name="created" value="cGVyZXo7TFBSRVo7MjAyMy0xMS0yOTswMjoyNjo0NSBBTTsyMjE1"/>
+        <attribute name="edited" value="cGVyZXo7TFBSRVo7MjAyMy0xMS0yOTswNDo1Mjo0NyBBTTsyOzIzMjc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="qty" type="Integer" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="extprice" type="Real" array="False" size=""/>
+            <declare name="discamt" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <declare name="sumdisc" type="Real" array="False" size=""/>
+            <assign variable="sumdisc" expression="0.0"/>
+            <output expression="&quot;Do you want to compute order total? (Yes or No) &quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response = &quot;Yes&quot;">
+                <output expression="&quot;Enter quantity: &quot;" newline="True"/>
+                <input variable="qty"/>
+                <output expression="&quot;Enter item price: &quot;" newline="True"/>
+                <input variable="price"/>
+                <assign variable="extprice" expression="qty * price"/>
+                <if expression="extprice &gt; 10000.00">
+                    <then>
+                        <assign variable="discamt" expression="extprice * (.25)"/>
+                    </then>
+                    <else>
+                        <assign variable="discamt" expression="extprice * (.10)"/>
+                    </else>
+                </if>
+                <assign variable="total" expression="extprice - discamt"/>
+                <assign variable="sumdisc" expression="sumdisc + discamt"/>
+                <output expression="&quot;Extended price: $&quot; &amp; extprice" newline="True"/>
+                <output expression="&quot;Discount amount: $&quot; &amp; discamt" newline="True"/>
+                <output expression="&quot;Total order amount: $&quot; &amp; total" newline="True"/>
+                <output expression="&quot;Do you want to compute order total? (Yes or No) &quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+            <output expression="&quot;Total discounts: $&quot; &amp; sumdisc" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
